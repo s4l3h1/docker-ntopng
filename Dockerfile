@@ -12,7 +12,7 @@ RUN apt-get update ;\
     git clone --progress --verbose --depth=1 https://github.com/ntop/ntopng ; \
     cd ntopng; git clone --progress --verbose --depth=1 --branch=dev https://github.com/ntop/nDPI ;\
     cd nDPI; ./autogen.sh; make; cd .. ;\
-    ./autogen.sh; ./configure; make; make geoip; make install ;\
+    ./autogen.sh; ./configure; make geoip; make; make install ;\
     mkdir /etc/ntopng/ /var/log/ntopng/ ;\
     touch /etc/ntopng/ntopng.start ;\
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
